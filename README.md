@@ -8,3 +8,8 @@ You just have to select the USB drive and the ISO image that you want to use and
 
 
 <b>Compatibility: </b> Python 3 (2 will be added soon)
+
+<h3>How to Run: </h3>
+<pre>
+sudo python vortexBETA.py
+</pre>
