@@ -1,0 +1,12 @@
+809a810,820
+> [27156.376080] usb 1-2: new high-speed USB device number 7 using xhci_hcd
+> [27156.557602] usb-storage 1-2:1.0: USB Mass Storage device detected
+> [27156.558671] scsi host4: usb-storage 1-2:1.0
+> [27157.591079] scsi 4:0:0:0: Direct-Access     Verbatim STORE N GO       PMAP PQ: 0 ANSI: 4
+> [27159.604296] sd 4:0:0:0: [sdb] 60604416 512-byte logical blocks: (31.0 GB/28.9 GiB)
+> [27159.604455] sd 4:0:0:0: [sdb] Write Protect is off
+> [27159.604458] sd 4:0:0:0: [sdb] Mode Sense: 23 00 00 00
+> [27159.604608] sd 4:0:0:0: [sdb] No Caching mode page found
+> [27159.604611] sd 4:0:0:0: [sdb] Assuming drive cache: write through
+> [27159.640259]  sdb: sdb1
+> [27159.642191] sd 4:0:0:0: [sdb] Attached SCSI removable disk
