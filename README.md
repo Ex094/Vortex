@@ -13,3 +13,10 @@ You just have to select the USB drive and the ISO image that you want to use and
 <pre>
 sudo python vortexBETA.py
 </pre>
+
+<h3>Screenshots</h3>
+<img src="http://imgur.com/GdNauSb.png">
+
+<img src="http://imgur.com/RfkX1fu.png">
+
+<img src="http://imgur.com/3UFUCPu.png">
