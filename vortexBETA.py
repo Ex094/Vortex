@@ -1,4 +1,4 @@
-import os, subprocess, time
+import os, subprocess, time, sys
 
 class Vortex:
     
@@ -59,7 +59,8 @@ class Vortex:
         try:
             self.result = subprocess.check_output(self.command, shell=True)
         except subprocess.CalledProcessError as err:
-            print("\t>> No Drives Found!\n")
+            print("\t>> No Drives Found!")
+            print("\t>> Connect your Flash Drive and then run the script again\n")
             quit()
             
         self.output = self.result.decode("UTF-8").split("\n")
@@ -81,10 +82,18 @@ class Vortex:
         os.system("clear")
 
 def main():
+    
+    #Check if script being run as root
+    if not os.geteuid() == 0:
+        sys.exit("Root Priviliges required! Run Vortex as root..")
+    
+    #Create Vortex obj
     vortex = Vortex()
     
+    #Clear screen
     vortex.clearScreen()
     
+    #Main menu shiz
     print("""
         #########################################
         # Vortex, A tool for burning ISO to USB #
@@ -97,24 +106,30 @@ def main():
         | http://www.procurity.wordpress.com
         """)
     
+    #Print available disks
     vortex.getDisks()
     
     choice = input("\n\n>> Please select your Device: ")
+    #Get device to use for burning
     vortex.prepareDisk(choice)
     
+    #Random sleep
     time.sleep(1)
     
     path = raw_input("\n>> Path to ISO File: ")
+    #Get iso path
     vortex.prepareISO(path)
     
     vortex.clearScreen()
     
+    #Display info to the user regarding iso and disk selected
     vortex.displayInfo()
     
     raw_input("\t>> Press Any Key to Continue..")
     
     vortex.clearScreen()
     
+    #Start burn process
     vortex.burn()
     
 if __name__ == "__main__":
